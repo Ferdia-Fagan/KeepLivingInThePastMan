@@ -1,0 +1,28 @@
+{
+  "name": "keep-living-in-the-past-man",
+  "version": "1.0.0",
+  "description": "Run test inside your addon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build:watch": "npm run build -- -w",
+    "start": "npm run build && web-ext run -s ./"
+  },
+  "author": "",
+  "devDependencies": {
+    "copy-webpack-plugin": "^8.1.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.3.2",
+    "source-map-loader": "^2.0.1",
+    "web-ext": "^5.5.0",
+    "webpack": "^5.28.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "@yaireo/tagify": "^3.23.1",
+    "firefox-profile": "^4.2.0",
+    "litepicker": "^2.0.11",
+    "page-metadata-parser": "^1.1.4"
+  }
+}

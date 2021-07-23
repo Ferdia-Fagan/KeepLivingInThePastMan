@@ -1,0 +1,45 @@
+{
+  "name": "keep_living_in_the_past_man",
+  "version": "1.0.0",
+  "description": "Run test inside your addon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build:watch": "npm run build -- -w",
+    "start": "npm run build && web-ext run --firefox='/home/empeor/software/firefox-86.0b3/firefox/firefox' --firefox-profile='/home/empeor/.mozilla/firefox/e1ri71ew.dev-edition-default' -s ./"
+  },
+  "author": "",
+  "devDependencies": {
+    // "babel-core": "^6.26.3",
+    // "babel-loader": "^8.2.2",
+    // "babel-plugin-transform-class-properties": "^6.24.1",
+    // "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    // "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    // "babel-preset-es2017": "^6.24.1",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.2.1",
+    "source-map-loader": "^2.0.0",
+    "web-ext": "^5.5.0",
+    "webpack": "^5.17.0",
+    "webpack-cli": "^4.4.0"
+  },
+  // "babel": {
+  //   "presets": [
+  //     "es2017"
+  //   ],
+  //   "plugins": [
+  //     "transform-class-properties",
+  //     "transform-es2015-modules-commonjs"
+  //   ]
+  // },
+  "dependencies": {
+    "@yaireo/tagify": "^3.22.1",
+    // "cheerio": "^1.0.0-rc.5",
+    "firefox-profile": "^4.0.0",
+    "litepicker": "^2.0.5",
+    "page-metadata-parser": "^1.1.4",
+    // "puppeteer": "^5.5.0",
+    // "selenium-webdriver": "^4.0.0-alpha.8"
+  }
+}

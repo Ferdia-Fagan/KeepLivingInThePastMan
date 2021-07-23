@@ -1,0 +1,53 @@
+  // "browser_action": {
+  //   "default_icon": "./src/icons/icon.png",
+  //   "default_title": "KeepLiving_InThe_Past_Man",
+  //   "default_popup": "./src/popup/interface.html"
+  // },
+
+    "browser_specific_settings": {
+    "gecko": {
+      "id": "native_application@example.org",
+      "strict_min_version": "50.0"
+    }
+  },
+
+      "default_title": "Mocha Test",
+    "default_popup": "./src/popup/testPopup.html"
+
+        "scripts": ["./src/background_scripts/CommunicationPort.js", "./src/background_scripts/FocusCheckUser.js", 
+                "./src/background_scripts/StatsAggregator.js","./src/background_scripts/InternalPluginMessageHandling.js", 
+                "./src/background_scripts/ScrapingManager.js", "./src/background_scripts/BrowserState.js",
+                "./src/background_scripts/TimeEvents.js"]
+
+                "page": "./src/background_scripts/background.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
+                import "./BrowserState.js";
+import "./CommunicationPort.js";
+import "./FocusCheckUser.js";
+import "./InternalPluginMessageHandling.js";
+import "./ScrapingManager.js";
+import "./StatsAggregator.js";
+import "./TimeEvents.js";
+
+
+
+    "unminified-webpack-plugin": "^2.0.0",
+    "web-ext": "^5.5.0",
+    "webpack": "^5.15.0",
+    "webpack-cli": "^4.3.1"
+        "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "copy-webpack-plugin": "^7.0.0",

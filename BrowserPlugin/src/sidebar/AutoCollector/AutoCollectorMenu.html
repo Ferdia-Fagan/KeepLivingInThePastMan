@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../AnnotateWebPage/tagify.css"/>
+    <link rel="stylesheet" href="./AutoCollectorMenu.css"/>
+  </head>
+
+<body>
+  <button id="backButton" class="button">back</button>  <br/>
+  <div id="selectionList_Container">
+    <h2>Auto Annotators:</h2>
+    <ul id="selectionList">
+        
+    </ul>
+  </div>
+
+  <div id="addAutoCollector_Menu">
+    <textarea id="setNameForNewAutoCollector" name="newAutoCollector" placeholder="Give name of new Auto Annotator"></textarea>
+    <button id="createNewAutoCollector">Create</button>
+  </div>
+  <div id="editAutoCollector_Menu" style="display: none;">
+    <button id="saveEditedAutoCollector">save</button>
+    <button id="deleteEditedAutoCollector">delete</button>
+  </div>
+
+  <div id="editAutoCollector_Container" style="display: none;">
+    <p>Auto Annotator Name:</p>  <br \>
+    <textarea id="autoCollectorNameField" name="newAutoCollector" placeholder="Give name of new AutoCollector"></textarea>
+
+    <p>Tags:</p>  <br \>
+    <textarea name='autoCollectorTagField' id='autoCollectorTagField' placeholder='Add tags to Auto Annotator'></textarea> <br \>
+    <!-- <textarea name='autoCollectorTagField' id='autoCollectorTagField' placeholder='Write a query'></textarea> <br \> -->
+
+    <!-- <p>Bookmarks:</p>  <br \> -->
+
+    <p>Host names:</p>  <br \>
+    <textarea id="hostnameField" name="newAutoCollector" placeholder="Add host names to Auto Annotator"></textarea>
+
+
+  </div>
+
+  
+  <script type="module" src='../../externalModules/tagify/tagify.min.js'></script>
+  <script type="module" src="../../utils/components/Tagging.js"></script>
+  <script type="module" src="./AutoCollectorMenu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="../SideBarMenu.css"/> -->
+    <link rel="stylesheet" href="../AnnotateWebPage/tagify.css"/>
+    <link rel="stylesheet" href="./QueryUI.css"/>
+    <!-- <link rel="stylesheet" href="../AnnotateWebPage/TagingUI.css" -->
+
+  </head>
+
+<body>
+    <button id="backButton" class="button">back</button>  <br/>
+    <br/>
+    <div id="queryContainer">
+        <!-- <textinputarea name='mix'></textinputarea> -->
+        <!-- <textarea name='mix'>[[here]]</textarea> -->
+        <div>
+          <p>Tags:</p>  <br \>
+          <textarea name='queryTagsBox' id='queryTagsBox' placeholder='add webpage search tags'></textarea>
+
+        </div>
+
+        <p>Bookmarks:</p> <br \>
+        <button id="filterByBookmarks" class="button">Open/close bookmarks choosing window</button>  <br \>
+        <div id="bookmarksFilterView">
+          <ul id="bookmarksFilterViewList">
+
+          </ul>
+        </div>
+        <!-- <textarea name='queryFoldersBox' id='queryFoldersBox' placeholder='Write a query'></textarea> -->
+        <p>Query:</p>  <br \>
+        <textarea name='queryStringBox' id='queryStringBox' placeholder='Write a query'></textarea> <br \>
+        <p>Filter by today</p>  <br \>
+        <label class="switch">
+          <input id="filterByToday_Option" type="checkbox">
+          <span class="slider"></span>
+        </label>  <br \>
+        <!-- <textarea name='dateLocationBox' id='dateLocationBox' placeholder='write dates [yy/mm//]'></textarea> -->
+        <!-- <input type="text" id="litepicker"/> -->
+        <p>FilterDates:</p>  <br \>
+        <div style="display: flex;">
+          <span id="litepicker"></span>
+        </div>
+        <button id="submitQuery" class="button">Submit query</button> <br \>
+    </div>
+    <!-- <div> -->
+      <ul id="queryResultsContainer">
+
+        <!-- <li class="queryResultItem">
+          <div class="webpageResultHeader"><a href="https://en.wikipedia.org/wiki/Information_theory">https://en.wikipedia.org/wiki/Information_theory</a></div>
+          <div class="webpageInfoCont">
+            <div class="webpageDataCont">
+              <p>Home page</p>
+            </div>
+            <div><img class="webpageImgCont" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Binaryerasurechannel.png/100px-Binaryerasurechannel.png"></div>
+          </div>
+        </li> -->
+        
+      </ul>
+      
+    <!-- </div> -->
+
+
+    <script type="module" src="../../externalModules/litepicker/dist/litepicker.js"></script>
+    <script type="module" src="../../externalModules/litepicker/dist/plugins/multiselect.js"></script>
+    <script type="module" src='../../externalModules/tagify/tagify.min.js'></script>
+    <script type="module" src="./QueryUI.js"></script>
+</body>
+
+</html>

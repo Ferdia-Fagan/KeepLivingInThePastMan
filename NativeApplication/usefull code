@@ -1,0 +1,53 @@
+----------------------------------------------------
+
+  override def updateTerm(term: String,totalTermCount: Int, numberOfDocsContainingTerm: Int, idfValue: Double,
+                          termDocumentFrequencyMap: Serialized[mutable.HashMap[Long, Int]]): Unit = {
+
+    val updateTermReq = indexT.filter(_.term === term).up
+//    List(
+//      totalTermCount.map(termIndex.totalTermCount === _),
+//      numberOfDocsContainingTerm.map(termIndex.numberOfDocsContainingTerm === _),
+//      idfValue.map(termIndex.idfValue === _),
+//      termDocumentFrequencyMap.map(termIndex.termDocumentFrequencyMap === _)
+//    ).collect({case Some(criteria)  => criteria}).reduceLeftOption(_ || _)
+//
+//    val q4 = indexT.filter(_.term === term).map{ termIndex =>
+//      List(
+//        totalTermCount.map(termIndex.totalTermCount === _),
+//        numberOfDocsContainingTerm.map(termIndex.numberOfDocsContainingTerm === _),
+//        idfValue.map(termIndex.idfValue === _),
+//        termDocumentFrequencyMap.map(termIndex.termDocumentFrequencyMap === _)
+//      ).collect({case Some(criteria)  => criteria}).reduceLeftOption(_ || _)
+//    }.update()
+  }
+
+
+
+
+----------------------------------------------------
+
+//  override def insertIfDoesNotExist(hostName: String, pathName: String): Future[WebPage] = {
+////    val exists = webPageMappings.filter(a => a.hostName === hostName.bind && a.pathName === pathName.bind).exists
+////    val exists = (for (u <- webPageMappings if u.hostName === hostName.bind) yield u).exists
+////    val insert = (None,hostName.bind,pathName.bind) <> (WebPage.apply _ tupled, WebPage.unapply)
+////    for (u <- Query(insert) if !exists) yield u
+//
+//    val exists = webPageMappings.filter(_.hostName === hostName).exists;
+//    val constRow = WebPage(None,hostName, pathName)
+//    webPageMappings forceInsertQuery Query(constRow).filterNot(_ => exists)
+//  }
+
+//  override def updateWebPageBookmarkFolderId(webPageId:Long, bookmarkFolderId:Int): Unit = {
+//    val q = (for { wp <- webPageMappings if( wp.id === webPageId) } yield wp.bookmarkFolderId)
+//    val action = q.update(Some(bookmarkFolderId))
+////    val q = webPageMappings.filter(_.id == webPageId).map(_.bookmarkFolderId).update(bookmarkFolderId)
+////    q.update(bookmarkFolderId)
+//
+//    println("updateWebPageBookmarkFolderId")
+//    action.statements.foreach(println)
+//
+//    db.run(action)
+//
+//  }
+
+----------------------------------------------------

@@ -1,0 +1,3 @@
+sudo zip -r -FS "/home/empeor/work/COLLEGE/final_year_project/application/git/System/ferdias_fyp/BrowserPlugin/web-ext-artifacts/native_messaging_example-1.0.xpi" * --exclude '*.git*'
+
+sudo web-ext build --overwrite-dest

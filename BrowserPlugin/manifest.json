@@ -1,0 +1,49 @@
+{
+
+  "description": "Keep Living In the Past, Man: A nativeMessaging browser plugin made for final year project of a Irish computer scientist.",
+  "manifest_version": 2,
+  "name": "Keep Living In the Past, Man.",
+  "version": "2.0",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "keep_living_in_the_past_man@FaganFerdia.com"
+    }
+  },
+
+  "background": {
+    "page": "./extension/background_scripts/background.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js": ["./extension/contentScripts/WebpageExtractionLayer.js"]
+    }
+  ],
+  
+  "browser_action": {
+    "default_icon": "./extension/icons/icon.png",
+    "default_title": "KeepLiving_InThe_Past_Man",
+    "default_popup": "./extension/popup/Menu.html"
+  },
+
+  "sidebar_action": {
+    "default_icon": "./extension/icons/icon.png",
+    "default_title" : "KeepLiving_InThe_Past_Man",
+    "default_panel": "./extension/sidebar/SideBarMenu.html"
+  },
+
+  "permissions": ["nativeMessaging", "webNavigation","tabs", "history","alarms", "idle","storage","bookmarks","unlimitedStorage"],
+
+
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Ctrl+Space"
+      }
+    }
+
+  }
+
+}

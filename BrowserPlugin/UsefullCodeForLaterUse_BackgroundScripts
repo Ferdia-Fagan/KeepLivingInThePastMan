@@ -1,0 +1,98 @@
+--------------------------------------------------------------------------------
+ALARMS:
+// var xPositionOfLastCheck = 0;
+// var yPositionOfLastCheck = 0;
+event: called when browser first starts
+function onStartup() {
+
+     // browser.alarms.get('focusCheck', function(alarm) {
+     //     if (!alarm) {
+     //         browser.alarms.create('focusCheck', {
+     //             when: Date.now() + 1,
+     //             periodInMinutes: 1
+     //         });
+     //     }
+     // });
+     console.log("about to create alarm")
+     const delayInMinutes = 1;
+     const periodInMinutes = 1;
+
+     browser.alarms.create("focusCheck", {
+         delayInMinutes,
+         periodInMinutes
+     });
+    
+}
+browser.runtime.onStartup.addListener(onStartup);
+--------------------------------------------------------------------------------
+
+GET CURRENT TABS IN WINDOW ON LAUNCH
+
+// Tabs:
+/* function logTabs(tabs) {
+    for (let tab of tabs) {
+        // tab.url requires the `tabs` permission
+        console.log("One of the tabs url is : " + tab.url);
+        console.log("One of the tabs id is : " + tab.id);
+        recordWebPage(tab.url, tab.id, 0)
+    }
+    console.log("dome logging tabs")
+
+} */
+
+ // TODO: 
+// function setUpForTabs(){
+//     // let querying = browser.tabs.query({});
+//     // querying.then(logTabs, onError);
+//     // function saveCurrentTab =
+//     const getCurrentTab = browser.tabs.getCurrent();
+//     getCurrentTab.then(onGot, onError);
+ 
+// }
+// setUpForTabs()
+
+--------------------------------------------------------------------------------
+
+Gettings the current tab
+
+/**
+ * @description
+ *  Handler to get current tab id
+ * @param {*} tabInfo 
+ */
+function getCurrentTabId(tabInfo) {
+    console.log("The current tab is : " + tabInfo.id);
+    return tabInfo.id
+}
+
+
+
+
+--------------------------------------------------------------------------------
+BROWSER button ACTIONS:
+
+// browser.browserAction.onClicked.addListener(() => {
+//   console.log("clicked")
+//   sendUpdateReport()
+// }); 
+  // browser.tabs.sendMessage(
+  //     currentTabId,
+  //     {messageType: "getCurrentWebPagePosition"}
+  // ).then(response => {
+  //     // console.log("Web page positions recieved during focus check is: " + response.xPosition + " , " + response.yPosition);
+  //     // // focusCheckTheUser(response.x, response.y)
+  //     // console.log("the web page has has key press since : " + response.keyHasBeenPressedSince);
+  //     console.log("focus check the user with idle state")
+  //     sendUpdateReport()
+  //     // if(xPositionOfLastCheck == response.x && yPositionOfLastCheck == response.y){
+  //     //     console.log("the position has not changed since")
+          
+  //     // }
+  //     // xPositionOfLastCheck = response.x 
+  //     // yPositionOfLastCheck = response.y
+  //     // tabs[tabId] = {title: response.title,hostName:hostName, pathName: pathName};
+      
+  // });
+
+
+--------------------------------------------------------------------------------

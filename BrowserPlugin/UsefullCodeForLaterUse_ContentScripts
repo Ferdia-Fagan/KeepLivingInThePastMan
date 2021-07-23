@@ -1,0 +1,364 @@
+
+--------------------------------------------------------------------------------------------------------
+MOUSE MOVEMENT:
+
+function CheckIfUserHasInteractedWithWebPage(){
+    var check = {"xPosition": x, "yPosition": y, "keyHasBeenPressedSince": keyPressedSinceLastCheck}
+
+    keyPressedSinceLastCheck = false;
+    return Promise.resolve(check);
+}
+
+var x = 0;
+var y = 0;
+
+document.onmousemove = function(e)
+{
+    x = e.pageX;
+    y = e.pageY;
+};
+
+var keyPressedSinceLastCheck = false;
+
+function logThatKeyboardHasBeenPressed(e) {
+    console.log('key pressed');
+    keyPressedSinceLastCheck = true;
+}
+document.addEventListener('keydown', logThatKeyboardHasBeenPressed);
+--------------------------------------------------------------------------------------------------------
+
+INDEXDB STARTSwITH
+
+    let keyRangeValue = IDBKeyRange.bound(tagPrefix, tagPrefix + 'uffff',false,false)
+
+    console.log("about to start : " + tagPrefix)
+    store.index('tag').openCursor(keyRangeValue).onsuccess = function(event) {
+        var cursor = event.target.result;
+        if(cursor) {
+            console.log("cursor : " + cursor.value.tag)
+
+            cursor.continue();
+        } else {
+            console.log('Entries all displayed.');
+        }
+    };
+
+
+--------------------------------------------------------------------------------------------------------
+
+AUTO SUGGEST
+
+// function autocomplete(inp, arr) {
+//     /*the autocomplete function takes two arguments,
+//     the text field element and an array of possible autocompleted values:*/
+//     var currentFocus;
+//     /*execute a function when someone writes in the text field:*/
+//     inp.addEventListener("input", function(e) {
+//         var a, b, i, val = this.value;
+//         /*close any already open lists of autocompleted values*/
+//         closeAllLists();
+//         if (!val) { return false;}
+//         currentFocus = -1;
+//         /*create a DIV element that will contain the items (values):*/
+//         a = document.createElement("DIV");
+//         a.setAttribute("id", this.id + "autocomplete-list");
+//         a.setAttribute("class", "autocomplete-items");
+//         /*append the DIV element as a child of the autocomplete container:*/
+//         this.parentNode.appendChild(a);
+//         /*for each item in the array...*/
+//         for (i = 0; i < arr.length; i++) {
+//           /*check if the item starts with the same letters as the text field value:*/
+//           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+//             /*create a DIV element for each matching element:*/
+//             b = document.createElement("DIV");
+//             /*make the matching letters bold:*/
+//             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+//             b.innerHTML += arr[i].substr(val.length);
+//             /*insert a input field that will hold the current array item's value:*/
+//             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+//             /*execute a function when someone clicks on the item value (DIV element):*/
+//                 b.addEventListener("click", function(e) {
+//                 /*insert the value for the autocomplete text field:*/
+//                 inp.value = this.getElementsByTagName("input")[0].value;
+//                 /*close the list of autocompleted values,
+//                 (or any other open lists of autocompleted values:*/
+//                 closeAllLists();
+//             });
+//             a.appendChild(b);
+//           }
+//         }
+//     });
+//     /*execute a function presses a key on the keyboard:*/
+//     inp.addEventListener("keydown", function(e) {
+//         var x = document.getElementById(this.id + "autocomplete-list");
+//         if (x) x = x.getElementsByTagName("div");
+//         if (e.keyCode == 40) {
+//           /*If the arrow DOWN key is pressed,
+//           increase the currentFocus variable:*/
+//           currentFocus++;
+//           /*and and make the current item more visible:*/
+//           addActive(x);
+//         } else if (e.keyCode == 38) { //up
+//           /*If the arrow UP key is pressed,
+//           decrease the currentFocus variable:*/
+//           currentFocus--;
+//           /*and and make the current item more visible:*/
+//           addActive(x);
+//         } else if (e.keyCode == 13) {
+//           /*If the ENTER key is pressed, prevent the form from being submitted,*/
+//           e.preventDefault();
+//           if (currentFocus > -1) {
+//             /*and simulate a click on the "active" item:*/
+//             if (x) x[currentFocus].click();
+//           }
+//         }
+//     });
+
+//     function addActive(x) {
+//       /*a function to classify an item as "active":*/
+//       if (!x) return false;
+//       /*start by removing the "active" class on all items:*/
+//       removeActive(x);
+//       if (currentFocus >= x.length) currentFocus = 0;
+//       if (currentFocus < 0) currentFocus = (x.length - 1);
+//       /*add class "autocomplete-active":*/
+//       x[currentFocus].classList.add("autocomplete-active");
+//     }
+
+//     function removeActive(x) {
+//       /*a function to remove the "active" class from all autocomplete items:*/
+//       for (var i = 0; i < x.length; i++) {
+//         x[i].classList.remove("autocomplete-active");
+//       }
+//     }
+
+//     function closeAllLists(elmnt) {
+//         /*close all autocomplete lists in the document,
+//         except the one passed as an argument:*/
+//         var x = document.getElementsByClassName("autocomplete-items");
+//         for (var i = 0; i < x.length; i++) {
+//             if (elmnt != x[i] && elmnt != inp) {
+//                 x[i].parentNode.removeChild(x[i]);
+//             }
+//         }
+//     }
+//   /*execute a function when someone clicks in the document:*/
+//   document.addEventListener("click", function (e) {
+//       closeAllLists(e.target);
+//   });
+// }
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+TAGIFY:
+
+
+ /*    tagify = new Tagify(input, {
+        mode: 'mix',
+        pattern: /@|#/,
+        tagTextProp: 'text',
+        whitelist: ["here","it", "blah", "happy", "hereee","heree"],
+        maxTags: 10,
+        dropdown: {
+            position: 'text',
+            mapValueTo: 'text',
+            highlightFirst: true,
+            maxItems: 20,           // <- mixumum allowed rendered suggestions
+            classname: "tags-look", // <- custom classname for this dropdown, so it could be targeted
+            enabled: 0,             // <- show suggestions on focus
+            closeOnSelect: true    // <- do not hide the suggestions dropdown once an item has been selected
+        }
+        }) */
+    
+/*     tagify.on('input', function(e){
+        var prefix = e.detail.prefix;
+        console.log("pressed : "  + JSON.stringify(e.inputElm))
+        console.log("pressed : "  + JSON.stringify(e.which))
+
+        // first, clean the whitlist array, because the below code, while not, might be async,
+        // therefore it should be up to you to decide WHEN to render the suggestions dropdown
+        // tagify.settings.whitelist.length = 0;
+
+        if( prefix ){
+            if( prefix == '@' )
+                tagify.settings.whitelist = ["here","it", "blah", "happy", "hereee","heree"];
+
+            if( prefix == '#' )
+                tagify.settings.whitelist = ["blah","blahh", "blahhh", "blahHHHH"]
+
+            if( e.detail.value.length > 1 )
+                tagify.dropdown.show.call(tagify, e.detail.value);
+        }
+
+        console.log( tagify.value )
+        console.log('mix-mode "input" event value: ', e.detail)
+    }) */
+
+/*     tagify.on("keydown",function(e){
+        console.log("jkoafdskjfdsaoi")
+    }) */
+
+    // tagify.on("keydown", '.tags-look',qw)
+    // tagify.on('edit:input edit:updated edit:start edit:keydown', e => console.log("fdsfdsafdsfds ,", e.type, e.detail))
+    // input.onkeypress = queryInput
+    // tagify.on("onKeydown", queryInput)
+    // tagify.onkeypress = queryInput
+
+
+
+/* export function addTag(tagAdding, webpageLoggingId){
+    
+    if(TAG_CACHE.has(tagAdding)){
+        let tagId = TAG_CACHE.get(tagChecking);
+        console.log("added tag from cache : " + tagId)
+
+        // if(tagsAddedReport.has(webpageLoggingId)){
+        //     tagsAddedReport.get(webpageLoggingId).add(tagId)
+        // }else{
+        //     tagsAddedReport.set(webpageLoggingId,new Set([tagId]))
+        // }
+
+        updateReport_AddTag(tagId,webpageLoggingId)
+        // return [true,tagId]
+        // let store = getObjectStore(STORE_NAME, "readwrite");
+    }else{
+        console.log("tag is not in cache. Checking index");
+        let store = getObjectStore(STORE_NAME, 'readwrite');
+
+        // let req = store.index('tag').get(tagChecking);
+        let req = store.add({value: tagAdding})
+
+        req.onsuccess = function(evt){
+            console.log("tag added : " + evt.target.result + " , "  +  tagAdding)
+            TAG_CACHE.set(evt.target.result,tagAdding)
+            console.log("TAG_CACHE.set + " + TAG_CACHE.get(evt.target.result))
+
+            updateReport_AddTag(tagId,webpageLoggingId)
+        }
+
+
+        req.onerror = function(evt){
+            console.log("error with adding tag")
+        }
+
+        // return [false,req];
+    }
+
+} */
+
+/* export async function getSimilarTags(tagPrefix){
+    console.log("getSimilarTags()")
+    let store = getObjectStore(STORE_NAME, 'readonly');
+    // let suggestions = store.where('tag').startsWith(tagPrefix).toArray();
+    let keyRangeValue = IDBKeyRange.bound(tagPrefix, tagPrefix + 'uffff',false,false)
+
+    console.log("about to start : " + tagPrefix)
+    var req = store.index('value').openCursor(keyRangeValue)
+
+    var result = [];
+
+    await new Promise((resolve, reject) => {
+        req.onsuccess = function(event) {
+            console.log("geting similar results did work")
+            var cursor = event.target.result;
+            if(cursor) {
+                console.log("cursor : " + cursor.value.tag)
+                result.push(cursor.value.tag)
+                cursor.continue();
+            } else {
+                console.log('Entries all displayed.');
+                resolve();
+            }
+            
+        };
+
+        req.onerror = function (evt) {
+            console.error("geting similar results did not work")
+            resolve();
+        };
+    });
+    console.log("end of getSimilarTags()")
+    return result
+    // return resolve({theSuggestions: result})
+    // return result;
+    // return suggestions;
+} */
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+    "tag_web_way": {
+      "suggested_key": {
+        "default": "Alt+Shift+A"
+      },
+      "description": "opens popup in middle of page to ask user to add to tags for this web page."
+    }
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+
+
+function queryInput(value){
+    console.log("keydown : " + value.which)
+    console.log("evt: " + JSON.stringify(value.key))
+    if(value.key == OPEN_CURLY_BRACKET){
+        console.log("OPEN_CURLY_BRACKET")
+
+        if(lookingForClosingBracket){
+            // Then log error as cant have curly bracket inside curly bracket
+            console.log("already lookingForClosingBracket")
+        }else{
+            // Then check previous char just before '{'
+            const queryLength = queryInputBox.value.length;
+            console.log("queryLength : " + queryLength)
+            if(queryLength != 0){
+                // Then string is > 0, so can check previous character to '{'
+                const previousCharacter = queryInputBox.value[queryLength - 1]
+                console.log("previousCharacter : " + previousCharacter)
+                if(previousCharacter === TAGS_SYMBOL){
+                    console.log("is TAGS_SYMBOL")
+                    closeOpenCurlyBrackets = true;
+                }
+                else if(previousCharacter === BOOKMARKFOLDER_SYMBOL){
+                    console.log("is BOOKMARKFOLDER_SYMBOL")
+                    closeOpenCurlyBrackets = true;
+                }else{
+                    console.log("no special symbol before {. So not allowed")
+                    queryErrorDetected = true;
+                    queryInputBox.style.backgroundColor = "red"
+                }
+            }
+        }
+        
+        
+    }
+    else if(value.which === CLOSE_CURLY_BRACKET && lookingForClosingBracket){
+        lookingForClosingBracket = false;
+    }
+} 
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+

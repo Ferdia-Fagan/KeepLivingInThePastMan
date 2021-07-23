@@ -1,0 +1,118 @@
+{
+  "tag": {
+    "__tagifyTagData": { "value": "tag_sample_one", "id": 1, "__isValid": true }
+  },
+  "index": 0,
+  "data": { "value": "tag_sample_one", "id": 1, "__isValid": true },
+  "tagify": {
+    "isFirefox": true,
+    "settings": {
+      "delimiters": {},
+      "pattern": null,
+      "tagTextProp": "value",
+      "maxTags": 10,
+      "callbacks": {},
+      "addTagOnBlur": true,
+      "duplicates": false,
+      "whitelist": [
+        { "value": "tag_sample_one", "id": 1 },
+        { "value": "tag_sample_two", "id": 2 }
+      ],
+      "blacklist": [],
+      "enforceWhitelist": false,
+      "keepInvalidTags": false,
+      "mixTagsAllowedAfter": {},
+      "mixTagsInterpolator": ["[[", "]]"],
+      "backspace": true,
+      "skipInvalid": false,
+      "editTags": { "clicks": 2, "keepInvalid": true },
+      "trim": true,
+      "mixMode": { "insertAfterTag": " " },
+      "autoComplete": { "enabled": true, "rightKey": false },
+      "classNames": {
+        "namespace": "tagify",
+        "mixMode": "tagify--mix",
+        "selectMode": "tagify--select",
+        "input": "tagify__input",
+        "focus": "tagify--focus",
+        "tag": "tagify__tag",
+        "tagNoAnimation": "tagify--noAnim",
+        "tagInvalid": "tagify--invalid",
+        "tagNotAllowed": "tagify--notAllowed",
+        "inputInvalid": "tagify__input--invalid",
+        "tagX": "tagify__tag__removeBtn",
+        "tagText": "tagify__tag-text",
+        "dropdown": "tagify__dropdown",
+        "dropdownWrapper": "tagify__dropdown__wrapper",
+        "dropdownItem": "tagify__dropdown__item",
+        "dropdownItemActive": "tagify__dropdown__item--active",
+        "dropdownInital": "tagify__dropdown--initial",
+        "scopeLoading": "tagify--loading",
+        "tagLoading": "tagify__tag--loading",
+        "tagEditing": "tagify__tag--editable",
+        "tagFlash": "tagify__tag--flash",
+        "tagHide": "tagify__tag--hide",
+        "hasMaxTags": "tagify--hasMaxTags",
+        "hasNoTags": "tagify--noTags",
+        "empty": "tagify--empty"
+      },
+      "dropdown": {
+        "classname": "tags-look",
+        "enabled": 0,
+        "maxItems": 20,
+        "searchKeys": ["value", "searchBy"],
+        "fuzzySearch": true,
+        "caseSensitive": false,
+        "accentedSearch": true,
+        "highlightFirst": false,
+        "closeOnSelect": false,
+        "clearOnSelect": true,
+        "position": "all",
+        "appendTarget": {}
+      },
+      "hooks": {},
+      "templates": { "dropdownItemNoMatch": null },
+      "readonly": false,
+      "placeholder": "write some tags",
+      "required": false
+    },
+    "state": {
+      "inputText": "",
+      "editing": false,
+      "actions": { "selectOption": true },
+      "mixMode": {},
+      "dropdown": { "visible": true, "query": "" },
+      "flaggedTags": {},
+      "lastOriginalValueReported": "[{\"value\":\"tag_sample_one\",\"id\":1}]",
+      "loadedOriginalValues": true,
+      "mainEvents": true,
+      "hasFocus": 1612113033908,
+      "selection": { "anchorOffset": 0, "anchorNode": {} },
+      "ddItemData": { "value": "tag_sample_one", "id": 1 },
+      "ddItemElm": {}
+    },
+    "value": [{ "value": "tag_sample_one", "id": 1, "__isValid": true }],
+    "listeners": {
+      "main": {
+        "focus": ["input", null],
+        "blur": ["input", null],
+        "keydown": ["input", null],
+        "click": ["scope", null],
+        "dblclick": ["scope", null],
+        "paste": ["input", null]
+      },
+      "dropdown": {}
+    },
+    "DOM": {
+      "originalInput": {},
+      "scope": {},
+      "input": {},
+      "dropdown": { "content": {} }
+    },
+    "CSSVars": { "tagHideTransition": 300 },
+    "suggestedListItems": [
+      { "value": "tag_sample_one", "id": 1 },
+      { "value": "tag_sample_two", "id": 2 }
+    ]
+  }
+}

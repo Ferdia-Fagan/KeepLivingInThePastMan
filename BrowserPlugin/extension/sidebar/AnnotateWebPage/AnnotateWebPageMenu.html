@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../SideBarMenu.css"/>
+    <link rel="stylesheet" href="./tagify.css"/>
+    <link rel="stylesheet" href="./TagingUI.css"/>
+  </head>
+
+<body>
+  <p>Annotator menu</p>
+  <button id="backButton" class="button">back</button>  <br/>
+  <!-- <div>
+    <p>Please add a Tag to this webpage:</p>
+  </div> -->
+  <!-- <form id="AddTagToWebpage"> -->
+    <!-- <label for="Tag">Add Tag:</label> -->
+    <!-- <input type="text" class="Tag" name="Tag"><br> -->
+    <!-- <input name='Tags'  id="Tags" placeholder='write some tags'> -->
+    <!-- <input id="myInput" type="text" name="myCountry" placeholder="Country"> -->
+    <!-- <input type="submit" value="Submit"> -->
+  <!-- </form>  -->
+  <button id="addHostnameButton" class="button">add this hostname as a potential Auto Annotator host name</button>  <br/>
+
+  <div id="webpagesData">
+    <p>Tags:</p>  <br/>
+    <textarea name='Tags' id="Tags" placeholder='Write some tags for the webpage'></textarea>
+    <button id="submitTags" class="button">Submit annotation tags</button>
+
+  </div>
+  
+  <script type="module" src='../../externalModules/tagify/tagify.min.js'></script>
+  <script type="module" src="./AnnotateWebPageMenu.js"></script>
+</body>
+
+</html>

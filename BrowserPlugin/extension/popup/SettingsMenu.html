@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Menu.css"/>
+  </head>
+
+<body>
+  <div id="popup-content">
+    <button id="back" class="button">Back to menu</button></br>
+    <div class="button">Please choose your settings:</div>
+    <form id="theSettings">
+        <label for="fname">Would you like to index all web pages?:</label><br>
+        <input id="indexAllPages" type="radio" id="fname" name="indexAllPages" value="yes">index all pages</input></br>
+        <input id="setIndexSettings" type="radio" id="fname" name="indexAllPages" value="no">set index settings</input></br>
+        <div id="settingsToSet" class="hidden">
+            <label for="minimumTotalTime">What is the minimum total amount of time you want to spend on a web page before it will be indexed? (in minutes):</label><br>
+            <input id="minimumTotalTime" class="numberSettings" type="text" name="minimumTotalTime"></br>
+            
+            <label for="minimumTotalVisits"></label>What would you like the minimum visit count for indexing to be? (whole numbers):<br>
+            <input id="minimumTotalVisits" class="numberSettings" type="text" name="minimumTotalVisits"></br>
+
+            <label for="fname">For the above two options, do you want either or both conditions to be met to trigger indexing page:</label><br>
+            <input id="bothConditions" type="radio" name="conditions" value="both">both</input>
+            <input id="eitherConditions" type="radio" name="conditions" value="either">either</input></br>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script type="text/javascript" src="./Settings.js"></script>
+  </div>
+</body>
+
+</html>
